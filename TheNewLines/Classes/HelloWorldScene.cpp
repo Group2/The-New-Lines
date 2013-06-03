@@ -557,7 +557,6 @@ void HelloWorld::addBox(int i, int j, char name[]){
 
 	CCAction * addAnimation = 
 		CCSequence::create(
-			CCMoveTo::create(duration, tiles[i][j]->getPosition()),
 			CCScaleTo::create(duration, 1),
 			CCRepeat::create(
 				CCSequence::create(
