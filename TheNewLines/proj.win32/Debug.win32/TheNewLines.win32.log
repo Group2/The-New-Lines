@@ -1,0 +1,23 @@
+﻿Build started 6/2/2013 10:45:25 PM.
+     1>Project "E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\TheNewLines\proj.win32\TheNewLines.win32.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         F:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /I..\Classes /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx\include" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx\kazmath\include" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\win32" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\third_party\win32" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\third_party\win32\OGLES" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\CocosDenshion\include" /IE:\pthread\include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS_DEBUG /D COCOS2D_DEBUG=1 /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc110.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\ShowControl.cpp
+         ShowControl.cpp
+       Link:
+         F:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\Debug.win32\TheNewLines.win32.exe" /INCREMENTAL /NOLOGO /LIBPATH:"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\Debug.win32\\" /LIBPATH:E:\pthread\include enet.lib ws2_32.lib winmm.lib libcocos2d.lib opengl32.lib glew32.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\Debug.win32\TheNewLines.win32.pdb" /SUBSYSTEM:WINDOWS /TSAWARE:NO /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\Debug.win32\TheNewLines.win32.lib" /MACHINE:X86 Debug.win32\TheNewLines.res
+         Debug.win32\AppDelegate.obj
+         Debug.win32\BackControl.obj
+         Debug.win32\CurlTest.obj
+         Debug.win32\Generate.obj
+         Debug.win32\HelloWorldScene.obj
+         Debug.win32\LoadingBar.obj
+         Debug.win32\MoveControl.obj
+         Debug.win32\ShowControl.obj
+         Debug.win32\WaitingScene.obj
+         Debug.win32\main.obj
+         TheNewLines.win32.vcxproj -> E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\Debug.win32\TheNewLines.win32.exe
+     1>Done Building Project "E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\TheNewLines\proj.win32\TheNewLines.win32.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:15.62

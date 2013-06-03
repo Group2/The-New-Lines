@@ -1,0 +1,47 @@
+﻿Build started 6/2/2013 8:54:12 PM.
+     1>Project "E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\TheNewLines\proj.win32\TheNewLines.win32.vcxproj" on node 2 (Rebuild target(s)).
+     1>ClCompile:
+         F:\Program Files\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /I..\Classes /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx\include" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx\kazmath\include" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\win32" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\third_party\win32" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\cocos2dx\platform\third_party\win32\OGLES" /I"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\CocosDenshion\include" /IE:\pthread\include /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc110.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp ..\Classes\BackControl.cpp ..\Classes\CurlTest.cpp ..\Classes\Generate.cpp ..\Classes\HelloWorldScene.cpp ..\Classes\LoadingBar.cpp ..\Classes\MoveControl.cpp ..\Classes\ShowControl.cpp ..\Classes\WaitingScene.cpp main.cpp
+         AppDelegate.cpp
+     1>F:\Program Files\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+         BackControl.cpp
+     1>F:\Program Files\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+         CurlTest.cpp
+     1>F:\Program Files\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+     1>..\Classes\CurlTest.cpp(127): warning C4305: 'argument' : truncation from 'double' to 'float'
+         Generate.cpp
+     1>F:\Program Files\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+         HelloWorldScene.cpp
+     1>F:\Program Files\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+     1>..\Classes\HelloWorldScene.cpp(574): warning C4305: 'argument' : truncation from 'double' to 'float'
+         LoadingBar.cpp
+     1>F:\Program Files\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+         MoveControl.cpp
+     1>F:\Program Files\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+         ShowControl.cpp
+     1>F:\Program Files\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+         WaitingScene.cpp
+     1>F:\Program Files\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+         main.cpp
+     1>F:\Program Files\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+         Generating Code...
+       ResourceCompile:
+         D:\Program Files\Windows Kits\8.0\bin\x86\rc.exe /D NDEBUG /D _UNICODE /D UNICODE /l"0x0409" /IRelease.win32\ /nologo /fo"Release.win32\TheNewLines.res" TheNewLines.rc 
+       Link:
+         F:\Program Files\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\Release.win32\TheNewLines.win32.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\Release.win32\\" /LIBPATH:E:\pthread\include enet.lib ws2_32.lib winmm.lib libcocos2d.lib opengl32.lib glew32.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\Release.win32\TheNewLines.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\Release.win32\TheNewLines.win32.lib" /MACHINE:X86 /SAFESEH:NO Release.win32\TheNewLines.res
+         Release.win32\AppDelegate.obj
+         Release.win32\BackControl.obj
+         Release.win32\CurlTest.obj
+         Release.win32\Generate.obj
+         Release.win32\HelloWorldScene.obj
+         Release.win32\LoadingBar.obj
+         Release.win32\MoveControl.obj
+         Release.win32\ShowControl.obj
+         Release.win32\WaitingScene.obj
+         Release.win32\main.obj
+         TheNewLines.win32.vcxproj -> E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\Release.win32\TheNewLines.win32.exe
+     1>Done Building Project "E:\Downloads\Compressed\cocos2d-2.1beta3-x-2.1.1\cocos2d-2.1beta3-x-2.1.1\TheNewLines\proj.win32\TheNewLines.win32.vcxproj" (Rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:24.99
