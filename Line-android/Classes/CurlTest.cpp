@@ -15,8 +15,10 @@ ENetHost * server;
 ENetPeer *peer;
 int channel, currentState, nextAtk;
 char packetBuffer[150];
-pthread_mutex_t mutexMapView = PTHREAD_MUTEX_INITIALIZER;
-pthread_mutex_t mutexMapPlay = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t mutexMapView;
+pthread_mutex_t mutexMapPlay;
+pthread_mutex_t mutexPeer;
+pthread_mutex_t mutexHost;
 int oldScore;
 
 CCScene* CurlTest::scene()
@@ -127,6 +129,9 @@ void CurlTest::initStartGame()
 								origin.y - viewLayer->getContentSize().height/3));
 	CCLOG("add viewLayer");
 	this->addChild(viewLayer);
+
+	pthread_mutex_lock(&mutexPeer);
+	pthread_mutex_lock(&mutexHost);
 	CCLOG("finish initStart");
 }
 
@@ -248,11 +253,15 @@ void* ThreadSend(void* arg){
 		/* One could also broadcast the packet by */
 		/* enet_host_broadcast (host, 0, packet); */
 		enet_peer_send (peer, 0, packet);
-		/* One could just use enet_host_service() instead. */
 		enet_host_flush (server);
 		CCLOG("finish send packet");
+		
+		if(playLayer->checkEndGame()||viewLayer->checkEndGame())
+			break;
 	}
 
+	pthread_mutex_unlock(&mutexPeer);
+	pthread_mutex_lock(&mutexHost);
 	enet_peer_disconnect (peer, 0);
 	enet_peer_reset (peer);
 	CCLOG("exit thread send");
@@ -261,6 +270,7 @@ void* ThreadSend(void* arg){
 
 void* ThreadRecv(void* arg){
 	ENetEvent event;
+	bool endgame = false;
 	/* Wait up to 1000 milliseconds for an event. */
 	while(1){
 		CCLOG("begin recv");
@@ -284,7 +294,13 @@ void* ThreadRecv(void* arg){
 					
 					updateMap(viewLayer, event.packet -> data);
 					CCLOG("update finish");
-
+					
+					endgame = true;
+					for(int i = 0; i < 49; i++)
+						if(event.packet -> data[i]=='0')
+							endgame = false;
+					if(playLayer->checkEndGame())
+						endgame = true;
 					enet_packet_destroy (event.packet);
 					CCLOG("packet destroyed");
 					break;
@@ -293,9 +309,17 @@ void* ThreadRecv(void* arg){
 					/* Reset the peer's client information. */
 					event.peer -> data = NULL;
 			}
+			if(endgame)
+				break;
 		}
+		if(endgame)
+			break;
 	}
+	
+	pthread_mutex_lock(&mutexPeer);
+	pthread_mutex_unlock(&mutexHost);
 	enet_host_destroy(server);
+	CCLOG("end recv");
 
     return NULL;
 }
