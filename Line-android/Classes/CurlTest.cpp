@@ -108,6 +108,11 @@ bool CurlTest::init(){
 
 void CurlTest::initStartGame()
 {
+	pthread_mutex_unlock(&mutexMapView);
+	pthread_mutex_unlock(&mutexMapPlay);
+	pthread_mutex_unlock(&mutexPeer);
+	pthread_mutex_unlock(&mutexHost);
+	
 	CCLOG("begin initStartGame");
 	this->removeAllChildren();
 	this->setTouchEnabled(false);
@@ -260,10 +265,11 @@ void* ThreadSend(void* arg){
 			break;
 	}
 
-	pthread_mutex_unlock(&mutexPeer);
 	pthread_mutex_lock(&mutexHost);
 	enet_peer_disconnect (peer, 0);
 	enet_peer_reset (peer);
+	peer = NULL;
+	pthread_mutex_unlock(&mutexPeer);
 	CCLOG("exit thread send");
     return NULL;
 }
@@ -274,7 +280,7 @@ void* ThreadRecv(void* arg){
 	/* Wait up to 1000 milliseconds for an event. */
 	while(1){
 		CCLOG("begin recv");
-		while (enet_host_service (server, & event, 1000000) > 0){
+		if (enet_host_service (server, & event, 1000000) > 0){
 			switch (event.type){
 				case ENET_EVENT_TYPE_CONNECT:
 					CCLOG("A new client connected from %x:%u.\n",
@@ -309,15 +315,13 @@ void* ThreadRecv(void* arg){
 					/* Reset the peer's client information. */
 					event.peer -> data = NULL;
 			}
-			if(endgame)
-				break;
 		}
 		if(endgame)
 			break;
 	}
 	
-	pthread_mutex_lock(&mutexPeer);
 	pthread_mutex_unlock(&mutexHost);
+	pthread_mutex_lock(&mutexPeer);
 	enet_host_destroy(server);
 	CCLOG("end recv");
 
